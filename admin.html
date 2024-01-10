@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalMediaMasters | Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="sticky top-0 z-50 bg-tertiarycolor drop-shadow-md">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <div class="flex">
+                        <div>
+                            <a href="admin.html"
+                                class="flex items-center text-white text-xl py-5 px-2 text-gray-700 hover:text-gray-100">
+                                <span class="font-bold text-lg md:text-xl">DigitalMediaMasters | Admin</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="hidden md:flex items-center justify-center space-x-6 text-white">
+                            <a class="hover:text-gray-200 text-lg font-semibold hover:border-b-2"
+                                href="#parent-of-table-of-products">Products</a>
+                            <a class="hover:text-gray-200 text-lg font-semibold hover:border-b-2"
+                                href="#parent-of-table-of-orders">Orders</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden flex items-center space-x-3 text-white">
+                        <button class="mobile-menu-button text-white">
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-menu hidden md:hidden text-center text-white font-semibold">
+                <a class="block py-2 px-4 text-sm hover:bg-gray-200 hover:text-tertiarycolor"
+                    href="#parent-of-table-of-products">Products</a>
+                <a class="block py-2 px-4 text-sm hover:bg-gray-200 hover:text-tertiarycolor"
+                    href="#parent-of-table-of-orders">Orders</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container mx-auto px-6">
+            <div id="modal-parent"></div>
+
+            <div class="flex justify-center align-center mt-7 text-3xl text-secondarycolor font-bold">
+                <h1>Products</h1>
+            </div>
+            <div class="flex justify-center m-4 mt-8 gap-3">
+                <button id="reset-products-btn"
+                    class="text-white bg-secondarycolor hover:bg-tertiarycolor font-medium rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Reset
+                    products</button>
+                <button id="add-product-btn"
+                    class="text-white bg-tertiarycolor hover:bg-blue-400 font-medium rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
+                    product</button>
+            </div>
+            <div class="relative mt-2 overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Productname
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Picture
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Description
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Price
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Popular
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Type
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Year
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Reviews
+                            </th>
+                            <th scope="col" class="px-6 py-3"></th>
+                            <th scope="col" class="px-6 py-3"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="parent-of-table-of-products">
+                    </tbody>
+                </table>
+            </div>
+            <div class=" flex justify-center align-center mt-10 text-3xl text-secondarycolor font-bold">
+                <h1>Orders</h1>
+            </div>
+            <div id="orders-table-parent" class="relative mt-10 overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                ID
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Total
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Date and time
+                            </th>
+                            <th scope="col" class="px-6 py-3"></th>
+                            <th scope="col" class="px-6 py-3"></th>
+                            <th scope="col" class="px-6 py-3"></th>
+                            <th scope="col" class="px-6 py-3"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="parent-of-table-of-orders">
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex justify-center m-4">
+                <p id="no-orders-msg" class="text-tertiarycolor text-xl font-bold">Er zijn op dit moment geen orders om
+                    een
+                    overzicht van te
+                    maken</p>
+            </div>
+        </div>
+    </main>
+    <script src="js/navbar.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
